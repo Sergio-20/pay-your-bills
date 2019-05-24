@@ -24,13 +24,20 @@ export default class BillsApp extends Component {
     }));
   };
 
+  saveBill = ( bill ) => {
+    this.setState( prevState => ({
+      allBills: [...prevState.allBills, bill]
+    }));
+    console.log(this.state.allBills);
+  };
+
   render() {
 
     return(
       <div id="bills-app">
         <Header />
         <AllBills />
-        <AddBill isAddingBill={ this.state.isAddingBill } />
+        <AddBill isAddingBill={ this.state.isAddingBill } allBills={ this.saveBill } />
         <FloatingMenu toggleNewBill={this.toggleNewBillStatus} />
       </div>
     );
