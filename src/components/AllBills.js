@@ -14,17 +14,18 @@ export default class AllBills extends Component {
 
   showAllBills = () => {
 
-    const bills = [1,2,3,4,5,6,7,8,9,10];
+    const bills = this.props.allBills;
 
     return bills.map( (bill) => {
       return <ul className="bills-list" key={bill}>
         <li className="bill">
           <div className="company">
             <div className="logo text-center">
-              <img className="col-sm-2" src="https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.therichest.com%2Fwp-content%2Fuploads%2F2014%2F04%2Fnetflix-logo.png&f=1" alt="Netflix"/>
+              <img className="col-sm-2" src={bill.busImg} alt="Netflix"/>
+              <div>{ bill.businessName }</div>
             </div>
           </div>
-          <div className="price">-$12.99</div>
+          <div className="price">-{ bill.price }</div>
         </li>
       </ul>
     });

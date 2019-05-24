@@ -158,6 +158,10 @@
     cursor: pointer;
   }
 
+  #submit-btn {
+    margin-bottom: 8rem;
+  }
+
 
   /****************Classes**************/
 
@@ -210,6 +214,15 @@
   @media only screen and (min-width: 320px) and (max-width: 600px)
   {
 
+    /******General Elements******/
+
+    header {
+      position: relative;
+      top: -2.5rem;
+    }
+
+    /********IDs********/
+
     #AllBills .bills-list:hover {
       transform: scale(1.0);
     }
@@ -218,6 +231,16 @@
       display: grid;
       grid-template-columns: repeat( auto-fit, minmax( 320px, 1fr ) );
       position: relative;
+      top: 15rem;
+    }
+
+    #AllBills .total-bills {
+      position: relative;
+      top: -3rem;
+    }
+
+    #submit-btn {
+      margin-bottom: 2rem;
     }
 
   }

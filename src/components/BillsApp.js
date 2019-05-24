@@ -28,7 +28,7 @@ export default class BillsApp extends Component {
     this.setState( prevState => ({
       allBills: [...prevState.allBills, bill]
     }));
-    console.log(this.state.allBills);
+    console.log(this.state);
   };
 
   render() {
@@ -36,8 +36,8 @@ export default class BillsApp extends Component {
     return(
       <div id="bills-app">
         <Header />
-        <AllBills />
-        <AddBill isAddingBill={ this.state.isAddingBill } allBills={ this.saveBill } />
+        <AllBills allBills={this.state.allBills} />
+        <AddBill isAddingBill={ this.state.isAddingBill } saveBill={ this.saveBill } />
         <FloatingMenu toggleNewBill={this.toggleNewBillStatus} />
       </div>
     );
