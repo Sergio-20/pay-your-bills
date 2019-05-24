@@ -13,11 +13,16 @@ export default class BillsApp extends Component {
     super();
 
     this.state = {
-      //addBill: false
+      allBills: [],
+      isAddingBill: false
     };
   }
 
-
+  toggleNewBillStatus = () => {
+    this.setState( prevState => ({
+      isAddingBill: !prevState.isAddingBill
+    }));
+  };
 
   render() {
 
@@ -25,8 +30,8 @@ export default class BillsApp extends Component {
       <div id="bills-app">
         <Header />
         <AllBills />
-        <AddBill />
-        <FloatingMenu />
+        <AddBill isAddingBill={ this.state.isAddingBill } />
+        <FloatingMenu toggleNewBill={this.toggleNewBillStatus} />
       </div>
     );
 

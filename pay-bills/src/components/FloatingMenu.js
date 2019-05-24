@@ -9,29 +9,9 @@ export default class FloatingMenu extends Component {
     super();
 
     this.state = {
-      addBill: false
+
     };
   }
-
-  displayForm = () => {
-
-    if( this.state.addBill == true )
-    {
-      document.getElementByTagName('FORM').style.display = 'block';
-    }
-    else if( this.state.addBill == false )
-    {
-      document.getElementByTagName('FORM').style.display = 'none';
-    }
-
-  };
-
-  toggleAddBill = () => {
-    this.setState( prevState => ({
-      addBill: !prevState.addBill
-    }));
-    console.log(this.state.addBill);
-  };
 
   render() {
 
@@ -53,7 +33,7 @@ export default class FloatingMenu extends Component {
           <div className="icon"><i className="fas fa-cogs"></i></div>
           <div className="text">Settings</div>
         </div>
-        <div className="add-button bg-primary" onClick={this.toggleAddBill}>
+        <div className="add-button bg-primary" onClick={ this.props.toggleNewBill }>
           <div className="icon"><i className="fas fa-plus"></i></div>
         </div>
       </nav>
