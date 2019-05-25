@@ -11,7 +11,7 @@ export default class AddBill extends Component {
     this.state = {
       busImg: 'add url here',
       businessName: 'add business name',
-      price: '$ 0'
+      price: '0'
     };
 
   }

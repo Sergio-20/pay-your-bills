@@ -21,7 +21,7 @@ export default class AllBills extends Component {
         <li className="bill">
           <div className="company">
             <div className="logo text-center">
-              <img className="col-sm-2" src={bill.busImg} alt="Netflix"/>
+              <img className="col-sm-2" src={bill.busImg} alt="logo"/>
               <div>{ bill.businessName }</div>
             </div>
           </div>
@@ -32,6 +32,26 @@ export default class AllBills extends Component {
 
   };
 
+  billsTotalAmount = () => {
+
+    const bills = this.props.allBills;
+    let total = 0;
+
+    for(var i = 0; i < bills.length; i++) {
+      total += Math.round( parseFloat( bills[i].price ) );
+    }
+
+    if(bills.length > 0)
+    {
+      return total;
+    }
+    else
+    {
+      return 0;
+    }
+
+  };
+
   render() {
 
     return(
@@ -39,7 +59,7 @@ export default class AllBills extends Component {
         <div className="container">
           <div className="total-bills">
             <div className="text">Total Due: </div>
-            <div className="number">$874</div>
+            <div className="number">${this.billsTotalAmount()}</div>
           </div>
 
           <div className="recent-transactions">
